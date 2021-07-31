@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Product,
-        attribute: ['id', 'productName', 'price', 'stock', 'categoryId'],
+        attribute: ['id', 'product_name', 'price', 'stock', 'category_id'],
       },
     ]
   })
@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Product,
-        attribute: ['id', 'productName', 'price', 'stock', 'categoryId'],
+        attribute: ['id', 'product_name', 'price', 'stock', 'category_id'],
       },
     ]
   })
@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   Tag.create({
-    tagName: req.body.tagName,
+    tag_name: req.body.tag_name,
   })
   .then(dbTagData => res.json(dbTagData))
   .catch(err => {
