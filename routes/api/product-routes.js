@@ -55,11 +55,11 @@ router.get('/:id', (req, res) => {
 // create new product
 router.post('/', (req, res) => {
   Product.create({
-    product_name: req.body.productName,
+    product_name: req.body.product_name,
     price: req.body.price,
     stock: req.body.stock,
-    categoryId: req.body.categoryId,
-    tag_ids: req.body.tagId,
+    category_id: req.body.category_id,
+    tag_ids: req.body.tag_id,
   })
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
